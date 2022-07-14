@@ -5,8 +5,12 @@ function PanelControl(props) {
       <button type="button" onClick={rotateX}>
         Rotate X
       </button>
-      <button type="button" onClick={rotateY}>Rotate Y</button>
-      <button type="button" onClick={rotateZ}>Rotate Z</button>
+      <button type="button" onClick={rotateY}>
+        Rotate Y
+      </button>
+      <button type="button" onClick={rotateZ}>
+        Rotate Z
+      </button>
     </div>
   );
 }
