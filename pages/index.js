@@ -1,9 +1,7 @@
 import React from "react";
 import {
-  ArcRotateCamera,
-  FreeCamera,
+  ArcRotateCamera, HemisphericLight,
   Vector3,
-  HemisphericLight,
   MeshBuilder,
 } from "@babylonjs/core";
 import SceneComponent from "../components/babylonComponent";
@@ -31,11 +29,7 @@ function BabyloneJsPage() {
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
 
-    // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-    var light = new HemisphericLight("light", new Vector3(0, 1, 0), scene);
-
-    // Default intensity is 1. Let's dim the light a small amount
-    light.intensity = 0.7;
+    new HemisphericLight("HemiLight", new Vector3(2, 5, 0), scene);
 
     // Our built-in 'box' shape.
     box = MeshBuilder.CreateBox("box", { size: 2 }, scene);
@@ -44,14 +38,9 @@ function BabyloneJsPage() {
   /**
    * Will run on every frame render.  We are spinning the box on y-axis.
    */
-  const onRender = (scene) => {
-    if (box !== undefined) {
-      // Move the box upward 1/2 its height
-      box.rotate.x = 0;
-      box.rotate.y = 0;
-      box.rotate.z = 0;
-    }
+  const onRender = () => {
   };
+  
   function rotateX() {
     alert("X clicked");
   }
