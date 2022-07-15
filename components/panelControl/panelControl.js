@@ -1,5 +1,5 @@
 function PanelControl(props) {
-  const { rotateX, rotateY, rotateZ } = props;
+  const { rotateX, rotateY, rotateZ, reset } = props;
   return (
     <div>
       <button type="button" onClick={rotateX}>
@@ -10,6 +10,9 @@ function PanelControl(props) {
       </button>
       <button type="button" onClick={rotateZ}>
         Rotate Z
+      </button>
+      <button type="button" onClick={reset}>
+        Reset
       </button>
     </div>
   );
